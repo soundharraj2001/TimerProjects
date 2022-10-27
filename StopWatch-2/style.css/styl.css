@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=PT+Sans+Narrow&display=swap');
+
+@font-face {
+    font-family: digital-7;
+    src: url('digital-7.ttf');
+}
+
+/* variable-creation  */
+:root{
+    --light-color : #f7f734;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #111a64;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap: 50px;
+}
+h2{
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+}
+.frame{
+    width: 600px;
+    height: 300px;
+    background-color: #111;
+    border: 50px solid #1eef25;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    color: #ffff;
+    text-align: center;
+    line-height: 175px;
+}
+.clock{
+    font-family: digital-7;
+    font-size: 80px;
+    text-shadow: 0 0 70px var(--light-color);
+    position: relative;
+}
+.clock::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 43px;
+    top: 0;
+    filter: blur(8px);
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(40px);
+}
